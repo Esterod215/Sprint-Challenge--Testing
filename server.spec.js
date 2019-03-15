@@ -34,4 +34,12 @@ describe('server.js', () => {
             ])
         })
     });
+
+    describe('Post /api/games', () => {
+        it('should return status code 422 if incomplete body is sent', async () => {
+            const body = {genre:'action'};
+            const res = await request(server).post('/api/games').send(body)
+            expect(res.status).toBe(422);
+        })
+    })
 });
