@@ -37,9 +37,16 @@ describe('server.js', () => {
 
     describe('Post /api/games', () => {
         it('should return status code 422 if incomplete body is sent', async () => {
-            const body = {genre:'action'};
+            let body = {genre:'action'};
             const res = await request(server).post('/api/games').send(body)
             expect(res.status).toBe(422);
+            expect(res.body).toBe('Incomplete fields');
+        });
+
+        it('should return a status code of 201', async () => {
+             const body = {id:3, title:'legend of zelda', genre:'puzzle/adventure'};
+             const res = await request(server).post('/api/games').send(body)
+             expect(res.status).toBe(201); 
         })
     })
 });
