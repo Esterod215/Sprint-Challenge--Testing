@@ -30,11 +30,11 @@ server.post('/api/games',(req,res)=>{
     if(!id || !title || !genre){
         res.status(422).json('Incomplete fields');
     }
-    
+    games.push(req.body);
     res.status(201).json([games]);
 })
 
-server.listen('localhost:3000',()=>{
+server.listen(3000,()=>{
     console.log('server listening on port 3000');
 });
 
