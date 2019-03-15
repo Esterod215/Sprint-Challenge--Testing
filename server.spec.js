@@ -3,35 +3,37 @@ const server = require('./server.js');
 
 describe('server.js', () => {
     
+    
     describe('Test Get /api/games', () => {
         
         it('should return a status of 200', async () => {
-            const res = request(server).get('/api/games');
+            const res = await request(server).get('/api/games');
             expect(res.status).toBe(200);
         });
 
+        //only works when there is no data on games
         it('should return an empty array when there is no data', async () => {
-            const res = request.server.get('/api/games')
+            const res = await request(server).get('/api/games')
             expect(res.body).toEqual([]);
         })
         
         it('should return data provided', async () => {
             const res = await request(server).get('/api/games')
-            expect(res.body).toEqual([
+            expect(res.body).toEqual([[
                 {
                     id:0,
-                    title: 'Pacman', // required
-                    genre: 'Arcade', // required
-                    releaseYear: 1980 // not required
+                    title: 'Pacman', 
+                    genre: 'Arcade', 
+                    releaseYear: 1980 
                 },
                 {
                     id:1,
-                    title: 'Mario', // required
-                    genre: 'action', // required
+                    title: 'Mario', 
+                    genre: 'action', 
                     releaseYear: 1982  
                 },
             
-            ])
+            ]])
         })
     });
 
@@ -48,12 +50,12 @@ describe('server.js', () => {
              const body = {id:2, title:'Legend of Zelda', genre:'puzzle/adventure'};
              const res = await request(server).post('/api/games').send(body)
              expect(res.status).toBe(201);
-             expect(res.body).toEqual([
+             expect(res.body).toEqual([[
                 {
                     id:0,
-                    title: 'Pacman', // required
-                    genre: 'Arcade', // required
-                    releaseYear: 1980 // not required
+                    title: 'Pacman', 
+                    genre: 'Arcade', 
+                    releaseYear: 1980 
                 },
                 {
                     id:1,
@@ -67,7 +69,7 @@ describe('server.js', () => {
                     genre:'puzzle/adventure',
                 }
             
-            ]) 
+            ]]) 
         })
     })
 });

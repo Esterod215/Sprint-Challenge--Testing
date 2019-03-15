@@ -21,7 +21,7 @@ const games = [
 ];
 
 server.get('/api/games',(req,res)=>{
-    res.status(200).json(games);
+    res.status(200).json([games]);
 });
 
 server.post('/api/games',(req,res)=>{
@@ -34,9 +34,7 @@ server.post('/api/games',(req,res)=>{
     res.status(201).json([games]);
 })
 
-server.listen(3000,()=>{
-    console.log('server listening on port 3000');
-});
+
 
 
 
