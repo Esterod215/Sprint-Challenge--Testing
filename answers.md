@@ -5,4 +5,4 @@
     -Test Driven Development is used to ensure every piece of code you write is working and passes a series of tests. You write the test cases first before writing production code so the tests fail and then every piece of production code you will write to make the tests pass and in this way ensure that all your code is working exactly how it should be. I think it is a tedious process but extremely beneficial.
 
 3. Mention three types of automated tests.
-    -Automated tests are tests in which we use external software to help us test code rather than doing it manually.Three types of automated tests include: Unit tests, snapshot tests, and component testing.
+    -Automated tests are tests in which we use external software to help us test code rather than doing it manually.Three types of automated tests include: Unit tests, snapshot tests, and integration testing.

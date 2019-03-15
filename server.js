@@ -4,24 +4,30 @@ const server = express();
 
 server.use(express.json());
 
-const games = [
-    {
-        id:0,
-        title: 'Pacman', // required
-        genre: 'Arcade', // required
-        releaseYear: 1980 // not required
-    },
-    {
-        id:1,
-        title: 'Mario', // required
-        genre: 'action', // required
-        releaseYear: 1982  
-    },
+const games =[
+     {
+         id:0,
+         title: 'Pacman', 
+         genre: 'Arcade', 
+         releaseYear: 1980 
+     },
+     {
+         id:1,
+         title: 'Mario', 
+         genre: 'action', 
+         releaseYear: 1982  
+     },
 
 ];
 
+const students = [];
+
 server.get('/api/games',(req,res)=>{
     res.status(200).json([games]);
+});
+
+server.get('/api/students',(req,res)=>{
+    res.status(200).json([students]);
 });
 
 server.post('/api/games',(req,res)=>{
