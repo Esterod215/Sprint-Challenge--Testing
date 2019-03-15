@@ -9,5 +9,10 @@ describe('server.js', () => {
             const res = request(server).get('/api/games');
             expect(res.status).toBe(200);
         });
+
+        it('should return an empty array when there is no data', () => {
+            const res = request.server.get('/api/games');
+            expect(res.body).toEqual([]);
+        })
     });
 });
