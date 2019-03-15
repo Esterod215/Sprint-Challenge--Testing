@@ -44,9 +44,29 @@ describe('server.js', () => {
         });
 
         it('should return a status code of 201', async () => {
-             const body = {id:3, title:'legend of zelda', genre:'puzzle/adventure'};
+             const body = {id:2, title:'Legend of Zelda', genre:'puzzle/adventure'};
              const res = await request(server).post('/api/games').send(body)
-             expect(res.status).toBe(201); 
+             expect(res.status).toBe(201);
+             expect(res.body).toEqual([
+                {
+                    id:0,
+                    title: 'Pacman', // required
+                    genre: 'Arcade', // required
+                    releaseYear: 1980 // not required
+                },
+                {
+                    id:1,
+                    title: 'Mario', // required
+                    genre: 'action', // required
+                    releaseYear: 1982  
+                },
+                {
+                    id:2,
+                    title:'Legend of Zelda',
+                    genre:'puzzle/adventure',
+                }
+            
+            ]) 
         })
     })
 });
