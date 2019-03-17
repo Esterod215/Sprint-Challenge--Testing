@@ -1,0 +1,8 @@
+1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
+    -The main difference is that describe() is used to state what the following tets will be testing and can have multiple it globals inside of it. The it() is specific to one test case and it describes what that particular test case is about. If i wanted to test a function thoroughly i would use a describe to state that i will be testing that particular function and then i would use it to specify what tests i will be conducting on the function which can be several but they all will be contained within that one describe.
+
+2. What is the point of `Test Driven Development`? What do you think about this approach?1. What is the point of `Test Driven Development`? What do you think about this approach?
+    -Test Driven Development is used to ensure every piece of code you write is working and passes a series of tests. You write the test cases first before writing production code so the tests fail and then every piece of production code you will write to make the tests pass and in this way ensure that all your code is working exactly how it should be. I think it is a tedious process but extremely beneficial.
+
+3. Mention three types of automated tests.
+    -Automated tests are tests in which we use external software to help us test code rather than doing it manually.Three types of automated tests include: Unit tests, snapshot tests, and integration testing.
